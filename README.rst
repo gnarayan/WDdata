@@ -44,4 +44,4 @@ This data release contains::
 |            ├── gemini                      - Gemini GMOS spectroscopy of C20 targets
 |            ├── mmt                         - MMT Blue Channel spectroscopy of C20+C22 targets
 |            ├── imacs                       - A lone Magellan IMACS spectrum we got to assess the suitability of IMACS 
-|            └── spectable_resolution.dat    - Upper limits on the resolution of each spectrum 
+|            └── spectable_resolution.dat    - Upper limits on the resolution of each spectrum + any wavelength shift to be applied
