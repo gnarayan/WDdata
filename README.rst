@@ -31,7 +31,9 @@ Click on the badges above  for code, licensing and documentation.
 
 Structure
 ---------
+
 This data release contains::
+
 >    WDdata                                  - this directory
 >        ├── LICENSE                         - MIT boilerplate
 >        ├── README.rst                      - this file
