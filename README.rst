@@ -31,15 +31,15 @@ Click on the badges above  for code, licensing and documentation.
 
 Structure
 ---------
-::
-    WDdata                                  - this directory
-        ├── LICENSE                         - MIT boilerplate
-        ├── README.rst                      - this file
-        ├── photometry                      - photometry directory
-        │   ├── src                         - instrumental magnitudes + scripts to regenerate apparent magnitudes
-        │   └── WDPhot_ILAPHv3.dat          - Apparent magnitudes of C20+C22 targets + CALSPEC primary standards as Vegamag 
-        └── spectroscopy                    - spectroscopy directory
-            ├── gemini                      - Gemini GMOS spectroscopy of C20 targets
-            ├── mmt                         - MMT Blue Channel spectroscopy of C20+C22 targets
-            ├── imacs                       - A lone Magellan IMACS spectrum we got to assess the suitability of IMACS 
-            └── spectable_resolution.dat    - Upper limits on the resolution of each spectrum 
+This data release contains::
+>    WDdata                                  - this directory
+>        ├── LICENSE                         - MIT boilerplate
+>        ├── README.rst                      - this file
+>        ├── photometry                      - photometry directory
+>        │   ├── src                         - instrumental magnitudes + scripts to regenerate apparent magnitudes
+>        │   └── WDPhot_ILAPHv3.dat          - Apparent magnitudes of C20+C22 targets + CALSPEC primary standards as Vegamag 
+>        └── spectroscopy                    - spectroscopy directory
+>            ├── gemini                      - Gemini GMOS spectroscopy of C20 targets
+>            ├── mmt                         - MMT Blue Channel spectroscopy of C20+C22 targets
+>            ├── imacs                       - A lone Magellan IMACS spectrum we got to assess the suitability of IMACS 
+>            └── spectable_resolution.dat    - Upper limits on the resolution of each spectrum 
