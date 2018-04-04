@@ -33,7 +33,7 @@ Structure
 ---------
 
 .. code-block:: text
-
+::
 WDdata                                  - this directory
     ├── LICENSE                         - MIT boilerplate
     ├── README.rst                      - this file
