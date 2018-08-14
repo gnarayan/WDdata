@@ -6,7 +6,6 @@ import numpy as np
 from astropy.io import ascii
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
-import seaborn as sns
 import astropy.table as at
 from numpy.lib.recfunctions import append_fields
 from scipy.stats import linregress
@@ -15,15 +14,17 @@ import pandas as pd
 from collections import OrderedDict
 
 def main():
-    suffix = ''
+    suffix = '_abmag'
+    ilaph_version = '3'
+    magsys = 'ABmag'
     ref = 'FMAG'  # which photometry package should be used to compute zeropoints
     mintime = 0.7 # mininum exposure length to consider for computing zeropoints
 
     stars     = ['GD-153', 'GD-71', 'G191B2B'] # what stars are standards
     marker    = ['o',      'd',     '*']       # markers to use for each standard in plots
-    use_stars = ['GD-153', 'GD-71', 'G191B2B'] # what stars are to be used to get zeropoints
+    use_stars = ['GD-153', 'G191B2B'] # what stars are to be used to get zeropoints
 
-    standard_mags_file = 'calspec_standards_WFC3_UVIS2_IR_vegamag.txt' # standard's apparent magnitudes in each band
+    standard_mags_file = f'../calspec_standards_WFC3_UVIS2_IR_{magsys}.txt' # standard's apparent magnitudes in each band
     smags = at.Table.read(standard_mags_file, format='ascii')
     smags = smags.to_pandas()
     smags.set_index('objID', inplace=True)
@@ -34,7 +35,7 @@ def main():
     drop_fields = ['X', 'Y', 'BCKGRMS', 'SKY', 'FITS-FILE']
 
     mag_table = OrderedDict() # stores combined magnitudes and zeropoints in each passband
-    all_mags   = at.Table.read('all+standardmeasures_C20_C22_ILAPHv3_AS.txt', format='ascii')
+    all_mags   = at.Table.read('../src/AS/all+standardmeasures_C20_C22_ILAPHv{}_AS.txt'.format(ilaph_version), format='ascii')
     mask = (all_mags[dref] < 0.5) & (np.abs(all_mags[ref]) < 50) & (all_mags['EXPTIME'] >= mintime)
     nbad = len(all_mags[~mask])
     print(all_mags[~mask])
@@ -53,7 +54,7 @@ def main():
     # init some structure to store the results for each passband
     result_table = OrderedDict()
     # drop some fields we do not need from the results
-    drop_fields = ['mc_error', 'hpd_2.5', 'hpd_97.5']
+    drop_fields = ['mc_error', 'hpd_2.5', 'hpd_97.5', 'n_eff', 'Rhat']
     # keep a track of all_objects
     all_objects = set()
     # and variable names
@@ -127,7 +128,7 @@ def main():
             mag_inst_i = mag_app_i[standard_idx] - zpt
 
             # create parameters for the apparent magntiudes for the sample stars - we want to infer these numbers
-            mag_app_j  = pm.Uniform('mag_app_{}_j'.format(pb), lower=8, upper=23, shape=nsamples)
+            mag_app_j  = pm.Uniform('mag_app_{}_j'.format(pb), lower=8, upper=25, shape=nsamples)
 
             #  the instrumnetal mags of the sample stars is the apparent magnitudes - the zeropoint
             if c20flag:
@@ -142,15 +143,16 @@ def main():
 
             # run the MCMC
             print("\n\nRunning {}".format(pb))
-            trace = pm.sample(njobs=4, draws=15000, tune=5000, init='advi+adapt_diag')
+            trace = pm.sample(njobs=4, draws=15000, tune=15000, init='advi+adapt_diag')
 
             # make a plot for sanity checking
             fig2, axs = plt.subplots(nrows=n_plot_vars, ncols=2)
             pm.traceplot(trace, ax=axs)
-            fig2.savefig('Figures/htrace_ILAPHv3{}_{}.pdf'.format(suffix,pb))
+            fig2.savefig('Figures/htrace_ILAPHv{}{}_{}.pdf'.format(ilaph_version, suffix,pb))
 
             # get the results
-            out = pm.df_summary(trace)
+            out = pm.summary(trace)
+            print(out)
             nicenames = out_vars + samples.tolist()
             out['objID'] = nicenames
             out.set_index('objID', inplace=True)
@@ -169,7 +171,7 @@ def main():
         if out is None:
             out = this_pb
         else:
-            out = pd.concat([out, this_pb], axis=1)
+            out = pd.concat([out, this_pb], axis=1, sort=True)
     if out is None:
         message = 'No data was processed in any filter for any objects'
         raise RuntimeError(message)
@@ -214,13 +216,13 @@ def main():
         if out2[c].dtype == np.float64:
             out2[c].format = '%.6f'
     print(out2)
-    out2.write('WDphot_ILAPHv3{}.dat'.format(suffix), format='ascii.fixed_width', delimiter='  ', overwrite=True, fill_values=[(ascii.masked, 'NaN')])
+    out2.write('WDphot_ILAPHv{}{}.dat'.format(ilaph_version, suffix), format='ascii.fixed_width', delimiter='  ', overwrite=True, fill_values=[(ascii.masked, 'NaN')])
 
     objID = out['objID']
     nobj = len(objID[nvar:])
 
     fig_big = plt.figure(figsize=(12,12))
-    with PdfPages('Figures/ILAPHv3{}.pdf'.format(suffix)) as pdf:
+    with PdfPages('Figures/ILAPHv{}{}.pdf'.format(ilaph_version, suffix)) as pdf:
         for j, obj in enumerate(objID[nvar:]):
             fig = plt.figure(figsize=(12, 12))
             for i, pb in enumerate(out_pb_order):
@@ -273,7 +275,7 @@ def main():
             pdf.savefig(fig)
             plt.close(fig)
         fig_big.tight_layout()
-        fig_big.savefig('Figures/ILAPHv3{}_combined.pdf'.format(suffix))
+        fig_big.savefig('Figures/ILAPHv{}{}_combined.pdf'.format(ilaph_version, suffix))
         plt.close(fig_big)
 
 
