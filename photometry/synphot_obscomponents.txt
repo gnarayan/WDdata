@@ -1,0 +1,95 @@
+The transmission functions for HST are supplied by the Calibration Reference
+Data System (CRDS) at STScI. They are available here:
+http://www.stsci.edu/hst/observatory/crds/throughput.html 
+
+(You don't need all of the tarballs - just synphot1, synphot2 and synphot6 in
+principle, but just grab the lot) 
+
+These specific files for each passband/observation mode change
+periodically, though not often. These were the files that were current during
+the analysis presented in Narayan et al. '18. They can be found in the
+synphot/comp directory. It's likely that you can use newer files without an
+issue. If you see radical departures, check if the files being used match
+these first.
+
+-Gautham Narayan
+gnarayan@stsci.edu
+20180924
+
+------
+F275W
+WFC3,UVIS2,F275W
+ota/hst_ota_007_syn.fits
+wfc3/wfc3_pom_001_syn.fits
+wfc3/wfc3_uvis_mir1_002_syn.fits
+wfc3/wfc3_uvis_mir2_002_syn.fits
+wfc3/wfc3uvis2_f275w_006_syn.fits
+wfc3/wfc3_uvis_owin_002_syn.fits
+wfc3/wfc3_uvis_iwin_002_syn.fits
+wfc3/wfc3_uvis_ccd2_003_syn.fits
+wfc3/wfc3uvis2_cor_004_syn.fits
+------
+F336W
+WFC3,UVIS2,F336W
+ota/hst_ota_007_syn.fits
+wfc3/wfc3_pom_001_syn.fits
+wfc3/wfc3_uvis_mir1_002_syn.fits
+wfc3/wfc3_uvis_mir2_002_syn.fits
+wfc3/wfc3uvis2_f336w_006_syn.fits
+wfc3/wfc3_uvis_owin_002_syn.fits
+wfc3/wfc3_uvis_iwin_002_syn.fits
+wfc3/wfc3_uvis_ccd2_003_syn.fits
+wfc3/wfc3uvis2_cor_004_syn.fits
+------
+F475W
+WFC3,UVIS2,F475W
+ota/hst_ota_007_syn.fits
+wfc3/wfc3_pom_001_syn.fits
+wfc3/wfc3_uvis_mir1_002_syn.fits
+wfc3/wfc3_uvis_mir2_002_syn.fits
+wfc3/wfc3uvis2_f475w_006_syn.fits
+wfc3/wfc3_uvis_owin_002_syn.fits
+wfc3/wfc3_uvis_iwin_002_syn.fits
+wfc3/wfc3_uvis_ccd2_003_syn.fits
+wfc3/wfc3uvis2_cor_004_syn.fits
+------
+F625W
+WFC3,UVIS2,F625W
+ota/hst_ota_007_syn.fits
+wfc3/wfc3_pom_001_syn.fits
+wfc3/wfc3_uvis_mir1_002_syn.fits
+wfc3/wfc3_uvis_mir2_002_syn.fits
+wfc3/wfc3uvis2_f625w_006_syn.fits
+wfc3/wfc3_uvis_owin_002_syn.fits
+wfc3/wfc3_uvis_iwin_002_syn.fits
+wfc3/wfc3_uvis_ccd2_003_syn.fits
+wfc3/wfc3uvis2_cor_004_syn.fits
+------
+F775W
+WFC3,UVIS2,F775W
+ota/hst_ota_007_syn.fits
+wfc3/wfc3_pom_001_syn.fits
+wfc3/wfc3_uvis_mir1_002_syn.fits
+wfc3/wfc3_uvis_mir2_002_syn.fits
+wfc3/wfc3uvis2_f775w_006_syn.fits
+wfc3/wfc3_uvis_owin_002_syn.fits
+wfc3/wfc3_uvis_iwin_002_syn.fits
+wfc3/wfc3_uvis_ccd2_003_syn.fits
+wfc3/wfc3uvis2_cor_004_syn.fits
+------
+F160W
+WFC3,IR,F160W
+wfc3/wfc3_ir_primary_001_syn.fits
+wfc3/wfc3_ir_secondary_001_syn.fits
+wfc3/wfc3_pom_001_syn.fits
+wfc3/wfc3_ir_csm_001_syn.fits
+wfc3/wfc3_ir_fold_001_syn.fits
+wfc3/wfc3_ir_mir1_001_syn.fits
+wfc3/wfc3_ir_mir2_001_syn.fits
+wfc3/wfc3_ir_mask_001_syn.fits
+wfc3/wfc3_ir_rcp_001_syn.fits
+wfc3/wfc3_ir_f160w_005_syn.fits
+wfc3/wfc3_ir_win_001_syn.fits
+wfc3/wfc3_ir_qe_003_syn.fits
+wfc3/wfc3_ir_cor_004_syn.fits
+------
