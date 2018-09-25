@@ -2,15 +2,16 @@ The transmission functions for HST are supplied by the Calibration Reference
 Data System (CRDS) at STScI. They are available here:
 http://www.stsci.edu/hst/observatory/crds/throughput.html 
 
-(You don't need all of the tarballs - just synphot1, synphot2 and synphot6 in
-principle, but just grab the lot) 
+You don't need all of the tarballs - just synphot1, synphot2 and synphot6 in
+principle, but just grab the lot.  
 
-These specific files for each passband/observation mode change
-periodically, though not often. These were the files that were current during
-the analysis presented in Narayan et al. '18. They can be found in the
-synphot/comp directory. It's likely that you can use newer files without an
-issue. If you see radical departures, check if the files being used match
-these first.
+These specific files for each passband/observation mode change periodically,
+though not often. This document lists the synphot files that were current
+during the analysis presented in Narayan et al. '18. They can be found in the
+included gzipped tarball `synphot_files_for_WDmodel.tar.gz` under the
+synphot/comp directory.  It's likely that you can use newer files without an
+issue. If you see radical departures, check if the files being used match these
+first.
 
 -Gautham Narayan
 gnarayan@stsci.edu
