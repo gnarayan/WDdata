@@ -23,9 +23,8 @@ Click on the badges above  for code, licensing and documentation.
     :alt: Documentation Status
     :target: http://wdmodel.readthedocs.io/en/latest/?badge=latest
 
-.. |doi| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.1701028.svg
-   :target: https://doi.org/10.5281/zenodo.1701028
-
+.. |doi| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.1701601.svg
+   :target: https://doi.org/10.5281/zenodo.1701601
 
 Structure
 ---------
