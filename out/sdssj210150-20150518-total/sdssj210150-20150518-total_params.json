@@ -1,0 +1,92 @@
+{
+    "teff": {
+        "fixed": false,
+        "value": 29129.830851609593,
+        "bounds": [
+            16000.0,
+            90000.0
+        ],
+        "scale": 153.66845496089263
+    },
+    "logg": {
+        "fixed": false,
+        "value": 8.004356573336029,
+        "bounds": [
+            7.0,
+            9.5
+        ],
+        "scale": 0.03515304697557564
+    },
+    "av": {
+        "fixed": false,
+        "value": 0.06387994482299719,
+        "bounds": [
+            0.0,
+            2.0
+        ],
+        "scale": 0.007956494231812106
+    },
+    "rv": {
+        "fixed": true,
+        "value": 3.1,
+        "bounds": [
+            1.7,
+            5.1
+        ],
+        "scale": 0.18
+    },
+    "dl": {
+        "fixed": false,
+        "value": 5791.624093223224,
+        "bounds": [
+            1e-07,
+            10000000.0
+        ],
+        "scale": 19.49721595201345
+    },
+    "fwhm": {
+        "fixed": false,
+        "value": 5.0,
+        "bounds": [
+            0.1,
+            25.0
+        ],
+        "scale": 0.5
+    },
+    "fsig": {
+        "fixed": false,
+        "value": 0.5,
+        "bounds": [
+            0.0,
+            50.0
+        ],
+        "scale": 0.1
+    },
+    "tau": {
+        "fixed": false,
+        "value": 5000.0,
+        "bounds": [
+            500.0,
+            20000.0
+        ],
+        "scale": 100.0
+    },
+    "fw": {
+        "fixed": false,
+        "value": 0.0001,
+        "bounds": [
+            0.0,
+            10.0
+        ],
+        "scale": 0.1
+    },
+    "mu": {
+        "fixed": false,
+        "value": 58.62273399447217,
+        "bounds": [
+            -1e-25,
+            1000.0
+        ],
+        "scale": 1.0
+    }
+}
