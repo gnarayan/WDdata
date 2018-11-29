@@ -37,8 +37,8 @@ This data release contains::
 |        ├── README.rst                      - this file
 |        ├── photometry                      - photometry directory
 |        │   ├── src                         - instrumental magnitudes + scripts to regenerate apparent magnitudes
-|        │   ├── WDphot_ILAPHv3_abmag.dat    - Apparent magnitudes of C20+C22 targets + CALSPEC primary standards as ABmag
-|        │   └── WDPhot_ILAPHv3.dat          - Apparent magnitudes of C20+C22 targets + CALSPEC primary standards as Vegamag 
+|        │   ├── WDphot_ILAPHv5_abmag.dat    - Apparent magnitudes of C20+C22 targets + CALSPEC primary standards as ABmag
+|        │   └── <synphot tables>            - Files for the WFC3 bandpasses from STScI 
 |        ├── spectroscopy                    - spectroscopy directory
 |        │   ├── gemini                      - Gemini GMOS spectroscopy of C20 targets
 |        │   ├── mmt                         - MMT Blue Channel spectroscopy of C20+C22 targets
