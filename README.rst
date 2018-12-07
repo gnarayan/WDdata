@@ -23,9 +23,8 @@ Click on the badges above  for code, licensing and documentation.
     :alt: Documentation Status
     :target: http://wdmodel.readthedocs.io/en/latest/?badge=latest
 
-.. |doi| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.1701028.svg
-   :target: https://doi.org/10.5281/zenodo.1701028
-
+.. |doi| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.1701601.svg
+   :target: https://doi.org/10.5281/zenodo.1701601
 
 Structure
 ---------
@@ -38,8 +37,8 @@ This data release contains::
 |        ├── wdcalib_target_list.dat         - coordinates of targets (bad = #), cycle specifies which HST cycle (01 = CALSPEC, 15 = secondary)
 |        ├── photometry                      - photometry directory
 |        │   ├── src                         - instrumental magnitudes + scripts to regenerate apparent magnitudes
-|        │   ├── WDphot_ILAPHv3_abmag.dat    - Apparent magnitudes of C20+C22 targets + CALSPEC primary standards as ABmag
-|        │   └── WDPhot_ILAPHv3.dat          - Apparent magnitudes of C20+C22 targets + CALSPEC primary standards as Vegamag 
+|        │   ├── WDphot_ILAPHv5_abmag.dat    - Apparent magnitudes of C20+C22 targets + CALSPEC primary standards as ABmag
+|        │   └── <synphot tables>            - Files for the WFC3 bandpasses from STScI 
 |        ├── spectroscopy                    - spectroscopy directory
 |        │   ├── gemini                      - Gemini GMOS spectroscopy of C20 targets
 |        │   ├── mmt                         - MMT Blue Channel spectroscopy of C20+C22 targets
