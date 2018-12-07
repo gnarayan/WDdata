@@ -35,6 +35,7 @@ This data release contains::
 |    WDdata                                  - this directory
 |        ├── LICENSE                         - MIT boilerplate
 |        ├── README.rst                      - this file
+|        ├── wdcalib_target_list.dat         - coordinates of targets (bad = #), cycle specifies which HST cycle (01 = CALSPEC, 15 = secondary)
 |        ├── photometry                      - photometry directory
 |        │   ├── src                         - instrumental magnitudes + scripts to regenerate apparent magnitudes
 |        │   ├── WDphot_ILAPHv3_abmag.dat    - Apparent magnitudes of C20+C22 targets + CALSPEC primary standards as ABmag
